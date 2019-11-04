@@ -29,8 +29,8 @@ public class LinkedList {
 
     }
 
-    Node first;
-    Node last;
+    private Node first;
+    private Node last;
 
     void pushBack(int x) {
         if (size == 0) {

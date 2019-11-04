@@ -1,3 +1,4 @@
+import java.util.Random;
 
 class Main {
 
@@ -143,13 +144,13 @@ class Main {
             return size == 0;
         }
 
-        static class LinkedList{
+        static class LinkedList {
             int size = 0;
             Node head;
             Node next;
 
 
-            class Node{
+            class Node {
                 int x;
                 Node next;
                 Node prev;
@@ -165,16 +166,16 @@ class Main {
                 return head.x;
             }
 
-            void add(int x){
-                if (size == 0){
+            void add(int x) {
+                if (size == 0) {
                     head = new Node(x, null, null);
                     size++;
                 }
-                if (size == 1){
+                if (size == 1) {
                     next = new Node(x, head, null);
                     size++;
                 }
-                if (size > 1){
+                if (size > 1) {
                     next = new Node(x, next, null);
                     size++;
                 }
@@ -186,35 +187,47 @@ class Main {
     }
 
     public static void main(String[] args) {
-        Stack stack = new Stack();
-        for (int i = 0; i < 10; i++) {
-            stack.add(i);
+        Set set = new Set();
+        Random random = new Random();
+        for (int i = 0; i < 20; i++) {
+            set.add(random.nextInt(10));
+        }
+        set.print();
+
+        for (int i = 0; i < 20; i++) {
+            int x = random.nextInt(20);
+            System.out.println(x + ":" + set.contains(x));
         }
 
 
-        while (!stack.isEmpty()) {
-//            System.out.println(stack.top());
-            stack.pop();
-        }
-
-        Queue queue = new Queue();
-        for (int i = 0; i < 10; i++) {
-            queue.push(i);
-        }
-
-        while (!queue.isEmpty()) {
-            System.out.println(queue.front());
-            queue.pop();
-        }
-
-        LinkedList linkedList = new LinkedList();
-        for (int i = 1; i < 10; i++) {
-            linkedList.pushBack(i);
-            linkedList.pushFront(-i);
-            linkedList.print();
-            linkedList.printReverse();
-        }
-
+//        Stack stack = new Stack();
+//        for (int i = 0; i < 10; i++) {
+//            stack.add(random.nextInt(10));
+//        }
+//
+//
+//        while (!stack.isEmpty()) {
+////            System.out.println(stack.top());
+//            stack.pop();
+//        }
+//
+//        Queue queue = new Queue();
+//        for (int i = 0; i < 10; i++) {
+//            queue.push(i);
+//        }
+//
+//        while (!queue.isEmpty()) {
+//            System.out.println(queue.front());
+//            queue.pop();
+//        }
+//
+//        LinkedList linkedList = new LinkedList();
+//        for (int i = 1; i < 10; i++) {
+//            linkedList.pushBack(i);
+//            linkedList.pushFront(-i);
+//            linkedList.print();
+//            linkedList.printReverse();
+//        }
 
 
     }
